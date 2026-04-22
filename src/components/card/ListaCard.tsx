@@ -10,13 +10,13 @@ import { useListaStore } from '../../context/useListaStore'
 import { Button } from '../ui/button'
 import { TaskCard } from './TaskCard'
 interface ListCardInterface {
-  readonly projectID: number
+  readonly projectID: string
 }
 export function ListaCard({ projectID }: ListCardInterface) {
   const project = useListaStore((state) =>
     state.lista.find((el) => el.id === projectID),
   )
-  console.log(`me renderizo con un id ${projectID}`)
+  console.log(project)
   return (
     <Card size='sm' className=' w-full max-w-sm'>
       <CardHeader>

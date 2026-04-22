@@ -7,36 +7,34 @@ import {
   DialogTrigger,
 } from '../ui/dialog'
 import { Tooltip, TooltipContent, TooltipTrigger } from '..//ui/tooltip'
-import { Button } from '../ui/button'
 import { IconPlus } from '@tabler/icons-react'
+import { FormLista } from '../forms/FormLista'
+import { Button } from '../ui/button'
 
 export function ModalLista() {
   return (
     <Dialog>
-      <DialogTrigger>
-        <Tooltip>
-          <TooltipTrigger>
-            <Button
-              variant='ghost'
-              aria-label='Añadir Lista'
-              className='p-2 rounded-full'
-            >
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <DialogTrigger asChild>
+            <Button variant='ghost' className='rounded-full'>
               <IconPlus />
             </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Añadir Lista</p>
-          </TooltipContent>
-        </Tooltip>
-      </DialogTrigger>
+          </DialogTrigger>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Añadir Lista</p>
+        </TooltipContent>
+      </Tooltip>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Are you absolutely sure?</DialogTitle>
+          <DialogTitle>Añadir una nueva Lista</DialogTitle>
           <DialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            Crea una nueva lista para organizar tus tarjetas en tu tablero de
+            Trello.
           </DialogDescription>
         </DialogHeader>
+        <FormLista />
       </DialogContent>
     </Dialog>
   )

@@ -4,19 +4,12 @@ import type { ListaItem } from '../types/store'
 interface ListaStore {
   lista: ListaItem[]
   addLista: (value: ListaItem) => void
-  removeLista: (value: number) => void
-  toggleTaskStatus: (listaId: number, taskId: number) => void
+  removeLista: (value: string) => void
+  toggleTaskStatus: (listaId: string, taskId: string) => void
 }
 
 export const useListaStore = create<ListaStore>((set) => ({
-  lista: [
-    {
-      name: 'hola',
-      createdDate: new Date(),
-      task: [],
-      id: 123,
-    },
-  ],
+  lista: [],
   addLista: (value) => {
     set((state) => ({ lista: [...state.lista, value] }))
   },

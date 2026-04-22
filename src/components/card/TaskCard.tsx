@@ -3,8 +3,8 @@ import { Badge } from '../ui/badge'
 import { useListaStore } from '../../context/useListaStore'
 
 interface TaskCardProps {
-  readonly taskID: number
-  readonly projectId: number
+  readonly taskID: string
+  readonly projectId: string
 }
 
 export function TaskCard({ taskID, projectId }: TaskCardProps) {

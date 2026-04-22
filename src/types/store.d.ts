@@ -1,11 +1,11 @@
 export interface TaskItem {
   name: string
   status: boolean
-  id:number
+  id: string
 }
 export interface ListaItem {
   name: string
-  id: number
+  id: string
   createdDate: Date
   task: TaskItem[]
 }
