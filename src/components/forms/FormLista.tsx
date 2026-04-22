@@ -8,6 +8,7 @@ import { useRef } from 'react'
 export function FormLista() {
   const addLista = useListaStore((state) => state.addLista)
   const nombreRef = useRef<HTMLInputElement>(null)
+  const closeRef = useRef<HTMLButtonElement>(null)
   const handlesubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (nombreRef.current?.value) {
@@ -17,6 +18,7 @@ export function FormLista() {
         task: [],
         id: generarIdUnico(),
       })
+      closeRef.current?.click()
     }
   }
   return (
@@ -39,7 +41,7 @@ export function FormLista() {
       <DialogFooter>
         <Field orientation='horizontal' className='justify-end'>
           <DialogClose asChild>
-            <Button variant='outline' type='button'>
+            <Button variant='outline' type='button' ref={closeRef}>
               Cancel
             </Button>
           </DialogClose>
