@@ -22,7 +22,6 @@ export function TaskCard({ taskID, projectId }: TaskCardProps) {
 
   const handleChange = () => {
     toogleTaskStatus(projectId, taskID)
-    console.log(task)
   }
 
   return (
