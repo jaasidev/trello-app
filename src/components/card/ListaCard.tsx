@@ -11,6 +11,7 @@ import { useListaStore } from '../../context/useListaStore'
 import { Button } from '../ui/button'
 import { TaskCard } from './TaskCard'
 import { IconTrash } from '@tabler/icons-react'
+import { toast } from 'sonner'
 interface ListCardInterface {
   readonly projectID: string
 }
@@ -22,6 +23,7 @@ export function ListaCard({ projectID }: ListCardInterface) {
   console.log(project)
   const handleDelete = () => {
     removeLista(projectID)
+    toast.error('Lista eliminada')
   }
   return (
     <Card size='sm' className=' w-full max-w-sm relative'>

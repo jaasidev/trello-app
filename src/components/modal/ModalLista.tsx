@@ -17,7 +17,7 @@ export function ModalLista() {
       <Tooltip>
         <TooltipTrigger asChild>
           <DialogTrigger asChild>
-            <Button variant='ghost' className='rounded-full'>
+            <Button variant='ghost'>
               <IconPlus />
             </Button>
           </DialogTrigger>

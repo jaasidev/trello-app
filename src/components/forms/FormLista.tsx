@@ -5,6 +5,7 @@ import { DialogClose, DialogFooter } from '../ui/dialog'
 import { useListaStore } from '../../context/useListaStore'
 import { generarIdUnico } from '../../scripts/helpers/random'
 import { useRef } from 'react'
+import { toast } from 'sonner'
 export function FormLista() {
   const addLista = useListaStore((state) => state.addLista)
   const nombreRef = useRef<HTMLInputElement>(null)
@@ -19,6 +20,7 @@ export function FormLista() {
         id: generarIdUnico(),
       })
       closeRef.current?.click()
+      toast.success('Se ha agregado una lista.')
     }
   }
   return (
