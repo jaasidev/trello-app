@@ -10,11 +10,12 @@ import {
 import { useListaStore } from '../../context/useListaStore'
 import { Button } from '../ui/button'
 import { TaskCard } from './TaskCard'
-import { IconArrowsMove, IconHandMove, IconTrash } from '@tabler/icons-react'
+import { IconArrowsMove, IconTrash } from '@tabler/icons-react'
 import { toast } from 'sonner'
 import { ModalTarea } from '../modal/ModalTarea'
 import { useSortable } from '@dnd-kit/react/sortable'
 import { useRef } from 'react'
+
 interface ListCardInterface {
   readonly projectID: string
   readonly index: number
@@ -36,7 +37,7 @@ export function ListaCard({ projectID, index }: ListCardInterface) {
   }
   if (!project) return null
   return (
-    <Card size='sm' className=' w-full max-w-sm relative' ref={ref}>
+    <Card size='sm' className=' w-full max-w-sm relative h-max' ref={ref}>
       <CardHeader>
         <CardTitle className='text-xl capitalize'>
           Lista: {project?.name}
@@ -57,11 +58,17 @@ export function ListaCard({ projectID, index }: ListCardInterface) {
       <CardContent>
         <h3 className='text-lg mb-2'>Tareas:</h3>
         <div className='flex flex-col gap-2'>
-          {project?.task.map((val) => {
-            return (
-              <TaskCard key={val.id} projectId={projectID} taskID={val.id} />
-            )
-          })}
+          {project.task.length > 0 ? (
+            project.task.map((val) => {
+              return (
+                <TaskCard key={val.id} projectId={projectID} taskID={val.id} />
+              )
+            })
+          ) : (
+            <div className='flex items-center justify-center bg-gray-100 py-2'>
+              No hay tareas aun
+            </div>
+          )}
         </div>
       </CardContent>
       <CardFooter>
