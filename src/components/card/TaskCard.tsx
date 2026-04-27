@@ -1,6 +1,7 @@
 import { Checkbox } from '../ui/checkbox'
 import { Badge } from '../ui/badge'
 import { useListaStore } from '../../context/useListaStore'
+import { toast } from 'sonner'
 
 interface TaskCardProps {
   readonly taskID: string
@@ -21,6 +22,7 @@ export function TaskCard({ taskID, projectId }: TaskCardProps) {
   if (!task) return null
 
   const handleChange = () => {
+    if (!task.status) toast.success(`Tarea Completada: ${task.name}`)
     toogleTaskStatus(projectId, taskID)
   }
 
