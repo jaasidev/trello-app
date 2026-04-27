@@ -1,75 +1,44 @@
-# React + TypeScript + Vite
+# Trello Clone App 📋
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a **Trello Clone App**! Este es un proyecto desarrollado con un enfoque 100% **educativo**, creado para experimentar con las últimas tecnologías del ecosistema frontend y poner en práctica conceptos avanzados de desarrollo con React.
 
-Currently, two official plugins are available:
+## 🚀 Características y Enfoque
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Al ser un proyecto de aprendizaje, el objetivo principal es explorar patrones de diseño y optimizaciones de rendimiento en aplicaciones interactivas (tipo Kanban).
 
-## React Compiler
+**💡 Rendimiento Optimizado**: En esta aplicación se ha puesto especial énfasis en el estado global. Los componentes utilizan **selectores granulares** (a través de Zustand) para suscribirse únicamente a los fragmentos de estado que necesitan. Esto evita renderizados innecesarios en el árbol de componentes y mejora drásticamente el rendimiento, un factor crítico en aplicaciones de drag & drop con muchos elementos en pantalla.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🛠️ Tecnologías Utilizadas
 
-Note: This will impact Vite dev & build performances.
+- **[React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)**: Interfaz de usuario y superconjunto tipado.
+- **[Vite](https://vite.dev/)**: Entorno de desarrollo ultrarrápido y empaquetado.
+- **[Zustand 5](https://zustand-demo.pmnd.rs/)**: Manejo del estado global de forma simple y eficiente.
+- **[Tailwind CSS v4](https://tailwindcss.com/)**: Estilos bajo demanda y diseño altamente flexible.
+- **[@dnd-kit](https://dndkit.com/)**: Lógica de "Arrastrar y Soltar" (Drag & Drop) potente, accesible y configurable.
+- **[shadcn/ui](https://ui.shadcn.com/)** y **[Radix UI](https://www.radix-ui.com/)**: Colección de componentes UI accesibles y personalizables.
+- **[Sonner](https://sonner.emilkowal.ski/)**: Sistema de notificaciones minimalista (toast).
+- **[React Compiler](https://react.dev/learn/react-compiler)**: Habilitado para optimizar el ciclo de renderizado de React de forma nativa.
 
-## Expanding the ESLint configuration
+## 📦 Instalación y Ejecución Local
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Si quieres desplegar el proyecto y jugar con él en tu entorno local, sigue estos pasos utilizando `pnpm`:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+# 1. Clona el repositorio
+git clone <url-del-repo>
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# 2. Navega al directorio del proyecto
+cd trello-app
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 3. Instala las dependencias
+pnpm install
+
+# 4. Inicia el servidor de desarrollo
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 💬 Feedback y Comentarios
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Dado que este proyecto está construido estrictamente con **fines de aprendizaje y experimentación**, no cuenta con guías de contribución ni se están aceptando Pull Requests de funcionalidades.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+¡Sin embargo, **agradezco enormemente tu feedback**! Si tienes sugerencias, comentarios sobre la arquitectura del código, notas alguna oportunidad de mejora en la implementación o encuentras algún detalle interesante, no dudes en abrir un **Issue**. ¡Toda retroalimentación constructiva suma mucho y es la principal razón de ser de este repositorio!
