@@ -65,7 +65,7 @@ export function ListaCard({ projectID, index }: ListCardInterface) {
               )
             })
           ) : (
-            <div className='flex items-center justify-center bg-gray-100 py-2'>
+            <div className='flex items-center justify-center bg-gray-100 py-2 dark:bg-card border rounded-lg'>
               No hay tareas aun
             </div>
           )}

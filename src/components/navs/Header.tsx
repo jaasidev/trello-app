@@ -1,5 +1,6 @@
 import { ModalLista } from '../modal/ModalLista'
 import { AlignBoxLeftBottomLogo } from '../svg/logo'
+import { ThemeToggle } from '../theme/ThemeToogle'
 export function Header() {
   return (
     <header className='border-b w-full p-4 flex justify-center items-center'>
@@ -8,8 +9,10 @@ export function Header() {
           <AlignBoxLeftBottomLogo />
           <span className='text-2xl font-semibold'>J-Trello</span>
         </div>
-        <div className='options'>
+        <div className='options gap-2 flex items-center'>
           <ModalLista />
+
+          <ThemeToggle />
         </div>
       </div>
     </header>
