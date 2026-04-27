@@ -10,25 +10,33 @@ import {
 import { useListaStore } from '../../context/useListaStore'
 import { Button } from '../ui/button'
 import { TaskCard } from './TaskCard'
-import { IconTrash } from '@tabler/icons-react'
+import { IconArrowsMove, IconHandMove, IconTrash } from '@tabler/icons-react'
 import { toast } from 'sonner'
 import { ModalTarea } from '../modal/ModalTarea'
+import { useSortable } from '@dnd-kit/react/sortable'
+import { useRef } from 'react'
 interface ListCardInterface {
   readonly projectID: string
+  readonly index: number
 }
-export function ListaCard({ projectID }: ListCardInterface) {
+export function ListaCard({ projectID, index }: ListCardInterface) {
   const project = useListaStore((state) =>
     state.lista.find((el) => el.id === projectID),
   )
+  const handleMove = useRef<HTMLButtonElement>(null)
+  const { ref } = useSortable({
+    id: projectID,
+    index: index,
+    handle: handleMove,
+  })
   const removeLista = useListaStore((state) => state.removeLista)
-  console.log(project)
   const handleDelete = () => {
     removeLista(projectID)
     toast.error('Lista eliminada')
   }
   if (!project) return null
   return (
-    <Card size='sm' className=' w-full max-w-sm relative'>
+    <Card size='sm' className=' w-full max-w-sm relative' ref={ref}>
       <CardHeader>
         <CardTitle className='text-xl capitalize'>
           Lista: {project?.name}
@@ -40,6 +48,9 @@ export function ListaCard({ projectID }: ListCardInterface) {
         <CardAction>
           <Button variant='ghost' onClick={handleDelete}>
             <IconTrash />
+          </Button>
+          <Button ref={handleMove} variant='ghost' className='cursor-grab'>
+            <IconArrowsMove />
           </Button>
         </CardAction>
       </CardHeader>

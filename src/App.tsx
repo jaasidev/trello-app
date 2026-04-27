@@ -7,10 +7,11 @@ function App() {
   return (
     <>
       <TooltipProvider>
-        <Header />
+        <Header />ç
         <main className='flex items-center justify-center'>
           <SectionCard />
         </main>
+        ç
       </TooltipProvider>
       <Toaster />
     </>

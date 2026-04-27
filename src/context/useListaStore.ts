@@ -54,6 +54,7 @@ interface ListaStore {
   toggleTaskStatus: (listaId: string, taskId: string) => void
   addTarea: (listaId: string, newTarea: TaskItem) => void
   removeTarea: (listaId: string, taskID: string) => void
+  setLista: (value: ListaItem[]) => void
 }
 
 export const useListaStore = create<ListaStore>((set) => ({
@@ -80,5 +81,8 @@ export const useListaStore = create<ListaStore>((set) => ({
     set((state) => ({
       lista: removeTareaInList(state.lista, listaId, taskID),
     }))
+  },
+  setLista: (value) => {
+    set({ lista: value })
   },
 }))
