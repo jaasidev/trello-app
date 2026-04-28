@@ -1,44 +1,44 @@
 # Trello Clone App 📋
 
-¡Bienvenido a **Trello Clone App**! Este es un proyecto desarrollado con un enfoque 100% **educativo**, creado para experimentar con las últimas tecnologías del ecosistema frontend y poner en práctica conceptos avanzados de desarrollo con React.
+Welcome to **Trello Clone App**! This is a project developed with a 100% **educational** focus, created to experiment with the latest technologies in the frontend ecosystem and put advanced React development concepts into practice.
 
-## 🚀 Características y Enfoque
+## 🚀 Features and Focus
 
-Al ser un proyecto de aprendizaje, el objetivo principal es explorar patrones de diseño y optimizaciones de rendimiento en aplicaciones interactivas (tipo Kanban).
+As a learning project, the main goal is to explore design patterns and performance optimizations in interactive applications (Kanban-style).
 
-**💡 Rendimiento Optimizado**: En esta aplicación se ha puesto especial énfasis en el estado global. Los componentes utilizan **selectores granulares** (a través de Zustand) para suscribirse únicamente a los fragmentos de estado que necesitan. Esto evita renderizados innecesarios en el árbol de componentes y mejora drásticamente el rendimiento, un factor crítico en aplicaciones de drag & drop con muchos elementos en pantalla.
+**💡 Optimized Performance**: Special emphasis has been placed on global state in this application. The components use **granular selectors** (via Zustand) to subscribe only to the pieces of state they need. This avoids unnecessary re-renders in the component tree and drastically improves performance, a critical factor in drag & drop applications with many on-screen elements.
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Technologies Used
 
-- **[React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)**: Interfaz de usuario y superconjunto tipado.
-- **[Vite](https://vite.dev/)**: Entorno de desarrollo ultrarrápido y empaquetado.
-- **[Zustand 5](https://zustand-demo.pmnd.rs/)**: Manejo del estado global de forma simple y eficiente.
-- **[Tailwind CSS v4](https://tailwindcss.com/)**: Estilos bajo demanda y diseño altamente flexible.
-- **[@dnd-kit](https://dndkit.com/)**: Lógica de "Arrastrar y Soltar" (Drag & Drop) potente, accesible y configurable.
-- **[shadcn/ui](https://ui.shadcn.com/)** y **[Radix UI](https://www.radix-ui.com/)**: Colección de componentes UI accesibles y personalizables.
-- **[Sonner](https://sonner.emilkowal.ski/)**: Sistema de notificaciones minimalista (toast).
-- **[React Compiler](https://react.dev/learn/react-compiler)**: Habilitado para optimizar el ciclo de renderizado de React de forma nativa.
+- **[React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)**: User interface and typed superset.
+- **[Vite](https://vite.dev/)**: Lightning-fast development environment and bundler.
+- **[Zustand 5](https://zustand-demo.pmnd.rs/)**: Simple and efficient global state management.
+- **[Tailwind CSS v4](https://tailwindcss.com/)**: Utility-first styles and highly flexible design.
+- **[@dnd-kit](https://dndkit.com/)**: Powerful, accessible, and configurable Drag & Drop logic.
+- **[shadcn/ui](https://ui.shadcn.com/)** and **[Radix UI](https://www.radix-ui.com/)**: Collection of accessible and customizable UI components.
+- **[Sonner](https://sonner.emilkowal.ski/)**: Minimalist notification system (toast).
+- **[React Compiler](https://react.dev/learn/react-compiler)**: Enabled to optimize the React rendering cycle natively.
 
-## 📦 Instalación y Ejecución Local
+## 📦 Installation and Local Execution
 
-Si quieres desplegar el proyecto y jugar con él en tu entorno local, sigue estos pasos utilizando `pnpm`:
+If you want to deploy the project and play with it in your local environment, follow these steps using `pnpm`:
 
 ```bash
-# 1. Clona el repositorio
+# 1. Clone the repository
 git clone <url-del-repo>
 
-# 2. Navega al directorio del proyecto
+# 2. Navigate to the project directory
 cd trello-app
 
-# 3. Instala las dependencias
+# 3. Install dependencies
 pnpm install
 
-# 4. Inicia el servidor de desarrollo
+# 4. Start the development server
 pnpm dev
 ```
 
-## 💬 Feedback y Comentarios
+## 💬 Feedback and Contributions
 
-Dado que este proyecto está construido estrictamente con **fines de aprendizaje y experimentación**, no cuenta con guías de contribución ni se están aceptando Pull Requests de funcionalidades.
+Although this project is built strictly with an **educational and experimental focus**, all collaborations and Pull Requests are welcome! Feel free to contribute with improvements, but please keep in mind that the primary goal of the project remains educational.
 
-¡Sin embargo, **agradezco enormemente tu feedback**! Si tienes sugerencias, comentarios sobre la arquitectura del código, notas alguna oportunidad de mejora en la implementación o encuentras algún detalle interesante, no dudes en abrir un **Issue**. ¡Toda retroalimentación constructiva suma mucho y es la principal razón de ser de este repositorio!
+I also greatly appreciate your feedback! If you have suggestions, comments about the code architecture, notice any opportunity for improvement in the implementation, or find an interesting detail, don't hesitate to open an **Issue**. All constructive feedback adds a lot of value and is the main reason for this repository's existence!
